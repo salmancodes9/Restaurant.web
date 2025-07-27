@@ -1,0 +1,196 @@
+[10:37 am, 22/7/2025] Haziq Bhat: Project Task for group A (Sahil and Salman):
+Create a website for a Restaurant (You can create the name and logo by your own)
+1. website should have a landing page with animations
+2. there should be navigation links as home (landing page) , about , menu , contact
+3. menu should have a its restaurant items in it.
+4. a website visitor can click on buy now on item in menu which opens a modal (having details of location to deliver)
+NOTE: There is no need to make pages responsive , and you have to use decent animations in it.
+... if there is any confusion about project , you can dm me.
+[10:47 am, 22/7/2025] Haziq Bhat: Project Task for group B (Khalid and Zairan):
+Create a website for a Bookstore (You can create the name and logo by your own)
+
+Website should have a static landing page with book showcase section
+
+There should be navigation links as home (landing page), about, books, contact
+
+Books page should have different book categories (Fiction, Non-Fiction, Children's Books, etc.) with book titles, authors, and prices
+
+A website visitor can see book details when they click on any book (create a separate detail page for each book showing description, author bio, and price)
+
+NOTE: There is no need to make pages responsive, and keep the design simple and clean with basic CSS styling only. No animations required.
+
+... if there is any confusion about project, you can dm me.
+[10:49 am, 22/7/2025] Haziq Bhat: The project deadline will be Monday (28th July)
+These tasks are designed as if you give only 3 to 4 hrs a day it will be completed as on given deadline.
+Good luck.
+
+
+
+
+ /* url("https://i.postimg.cc/wT3TQS3V/header-image2.jpg"); */
+            /* url("https://videos.pexels.com/video-files/3298478/3298478-uhd_1440_2732_25fps.mp4"); */
+
+
+
+
+/* Food section with animated background */
+        #food {
+            padding: 5rem 0 10rem 0;
+            /* background: linear-gradient(45deg, #ffffff 0%, #f8f9fa 100%); */
+            background-color:red;
+            position: relative;
+        }
+
+        #food::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 25% 25%, rgba(22, 160, 131, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 75% 75%, rgba(17, 121, 100, 0.1) 0%, transparent 50%);
+            animation: bgPulse 6s ease-in-out infinite;
+        }
+
+        @keyframes bgPulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.7; }
+        }
+
+        #food h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            color: #555;
+            position: relative;
+            z-index: 1;
+        }
+
+        .food-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Continue with rest of the styles... */
+        .food-container img {
+            display: block;
+            width: 100%;
+            margin: auto;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
+
+        .img-container {
+            margin: 0 1rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .img-content {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            z-index: 2;
+            text-align: center;
+            transition: all 0.3s ease-in-out 0.1s;
+        }
+
+        .img-content h3 {
+            color: #fff;
+            font-size: 2.2rem;
+            text-transform: capitalize;
+        }
+
+        .img-content a {
+            font-size: 1.2rem;
+        }
+
+        .img-container::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(22, 160, 131, 0.8), rgba(17, 121, 100, 0.8));
+            opacity: 0;
+            z-index: 1;
+            transform: scaleY(0);
+            transform-origin: 100% 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .img-container:hover::after {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+        .img-container:hover .img-content {
+            opacity: 1;
+            top: 40%;
+        }
+
+        .img-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .food-type {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .food-type.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+
+
+
+
+          <section id="food">
+        <h2>Types of food</h2>
+        <div class="food-container container">
+            <div class="food-type fruite">
+                <div class="img-container">
+                    <img src="https://i.postimg.cc/yxThVPXk/food1.jpg" alt="error" />
+                    <div class="img-content">
+                        <h3>fruits</h3>
+                        <a href="https://en.wikipedia.org/wiki/Fruit" class="btn btn-primary" target="blank">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type vegetable">
+                <div class="img-container">
+                    <img src="https://i.postimg.cc/Nffm6Rkk/food2.jpg" alt="error" />
+                    <div class="img-content">
+                        <h3>vegetable</h3>
+                        <a href="https://en.wikipedia.org/wiki/Vegetable" class="btn btn-primary" target="blank">learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="food-type grain">
+                <div class="img-container">
+                    <img src="https://i.postimg.cc/76ZwsPsd/food3.jpg" alt="error" />
+                    <div class="img-content">
+                        <h3>grain</h3>
+                        <a href="https://en.wikipedia.org/wiki/Grain" class="btn btn-primary" target="blank">learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
